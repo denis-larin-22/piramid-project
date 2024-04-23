@@ -1,0 +1,131 @@
+.wrapper {
+    min-height: 100vh;
+    background-color: $t-background-main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper .container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.advantages {
+    max-width: 649px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    & a {
+        width: fit-content;
+        position: relative;
+        padding-bottom: 5px;
+        @include font-setting (500, 1.25rem, 110%);
+        color: $t-blue-main;
+    }
+
+    & a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $t-blue-main;
+        transition: width 0.3s ease;
+    }
+
+    & a:hover::after {
+        width: 100%;
+    }
+
+    & h4 {
+        @include font-setting (600, 2.25rem, 2.81rem);
+    }
+
+    & p {
+        line-height: 1.5rem;
+    }
+
+    & ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    & li {
+        display: flex;
+        gap: 18px;
+    }
+
+    & li p {
+        line-height: 1.25rem;
+    }
+
+    & div {
+        margin-top: 40px;
+        display: flex;
+        align-items: baseline;
+        gap: 7px;
+    }
+
+    & div p {
+        font-size: 1rem;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 536px;
+    padding: 33px;
+    background-color: #FBFBFB;
+
+    &__full-name {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__full-name input {
+        max-width: 225px;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & label {
+        @include font-setting (500, 1rem, 1.88rem);
+    }
+
+    & input,
+    & textarea {
+        @include font-setting (400, 1rem, 1.88rem);
+        font-family: "Inter", sans-serif;
+        padding: 5px 14px;
+        border: 2px solid $t-gray;
+        transition: 0.2s ease-in;
+        border-radius: 0;
+    }
+
+    & textarea {
+        max-height: 86px;
+        resize: none;
+    }
+
+    & input::placeholder,
+    & textarea::placeholder {
+        color: $t-gray;
+    }
+
+    & input:focus,
+    & textarea:focus {
+        outline-color: $t-blue-main;
+        background-color: #01ADED07;
+        transform: scale(1.01);
+    }
+}

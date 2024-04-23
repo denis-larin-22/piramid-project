@@ -5,14 +5,15 @@
     line-height: $l;
 }
 
-// Font settings
-.t-text-form-sm {
-    @include font-setting (500, 1rem, 1.88rem)
+.font-inter {
+    font-family: "Inter", sans-serif;
 }
 
-.t-text-form-base {
-    @include font-setting (400, 1rem, 1.88rem)
+.uppercase {
+    text-transform: uppercase;
 }
+
+// Font settings
 
 .t-text-base {
     @include font-setting (300, 1.13rem, 1.5rem)
