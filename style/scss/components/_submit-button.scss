@@ -20,6 +20,11 @@
         @include font-setting (500, 1rem, 1.88rem);
         transition: 0.3 ease all;
 
+        @media screen and (max-width: $sm) {
+            font-size: 1.14rem;
+            line-height: 2.14rem;
+        }
+
         &:hover {
             background: white;
             color: $t-blue-main;

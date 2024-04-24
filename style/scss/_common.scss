@@ -3,9 +3,18 @@
     text-decoration: none;
 }
 
+html {
+    font-size: 16px;
+}
+
+@media screen and (max-width: $sm) {
+    html {
+        font-size: 14px;
+    }
+}
+
 body {
     font-family: "Raleway", sans-serif;
-    font-size: 16px;
     color: black;
 }
 

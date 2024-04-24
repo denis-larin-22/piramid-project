@@ -134,9 +134,17 @@ table {
   text-decoration: none;
 }
 
+html {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
 body {
   font-family: "Raleway", sans-serif;
-  font-size: 16px;
   color: black;
 }
 
@@ -181,6 +189,12 @@ body {
   font-size: 1rem;
   line-height: 1.88rem;
   transition: 0.3 ease all;
+}
+@media screen and (max-width: 640px) {
+  .submit__button {
+    font-size: 1.14rem;
+    line-height: 2.14rem;
+  }
 }
 .submit__button:hover {
   background: white;
@@ -229,10 +243,16 @@ body {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  gap: 20px;
 }
 
-.mb-40 {
+.mb {
   margin-bottom: 40px;
+}
+@media screen and (max-width: 640px) {
+  .mb {
+    margin-bottom: 20px;
+  }
 }
 
 .advantages {
@@ -246,7 +266,7 @@ body {
 .advantages h5 {
   width: -moz-fit-content;
   width: fit-content;
-  margin-bottom: 20px;
+  margin: 20px 0;
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 110%;
@@ -277,8 +297,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 536px;
   padding: 33px;
+  margin-bottom: 20px;
   background-color: #FBFBFB;
 }
 .form__full-name {
@@ -330,4 +350,52 @@ body {
   outline-color: #01ADED;
   background-color: rgba(1, 173, 237, 0.0274509804);
   transform: scale(1.01);
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper .container {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .advantages {
+    max-width: 100%;
+  }
+  .advantages h5 {
+    font-weight: 500;
+    font-size: 1.14rem;
+    line-height: 0.9rem;
+  }
+  .form {
+    width: 100%;
+  }
+  .form__full-name {
+    flex-direction: column;
+  }
+  .form__full-name input {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .wrapper .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .advantages h4 {
+    font-weight: 600;
+    font-size: 1.71rem;
+    line-height: 2.86rem;
+  }
+  .advantages ul {
+    margin-top: 10px;
+  }
+  .form {
+    padding: 32px 30px;
+  }
+  .form label {
+    font-size: 1.14rem;
+  }
+  .form input, .form textarea {
+    font-size: 1.14rem;
+    line-height: 2.14rem;
+  }
 }/*# sourceMappingURL=index.css.map */
