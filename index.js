@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function toggleErrorStyle(isError) {
-        submitButton.innerText = isError ? "Заповніть усі поля" : "Замовити демо";
+        submitButton.innerText = isError ? "Заповніть усі обов'язкові поля *" : "Замовити демо";
         submitButton.classList.toggle("submit_error", isError);
         setTimeout(() => {
             submitButton.innerText = "Замовити демо";
@@ -22,20 +22,21 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleFormSubmit(event) {
         event.preventDefault();
 
-        const isAnyFieldEmpty = Array.from(form.elements).some(element => {
-            return (element.tagName === "INPUT" || element.tagName === "TEXTAREA") && element.value.trim() === '';
+        const isAnyRequiredEmpty = ["name", "surname", "number"].some(fieldId => {
+            const input = document.querySelector(`#${fieldId}`);
+            return input.value.trim() === '';
         });
 
-        if (isAnyFieldEmpty) {
+        if (isAnyRequiredEmpty) {
             toggleErrorStyle(true);
             return;
         }
 
         const formData = collectFormData();
-        // Further work with form data
+        // Further processing of form data
         console.log(formData);
 
-        form.reset(); // Clear form fields
+        form.reset(); // Очистить поля формы
 
         // Submit button animation
         submitButton.classList.add("submit_onclic");
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 2250);
     }
 
-    // Listeners
+    // Event Listeners
     form.addEventListener("submit", handleFormSubmit);
     submitButton.addEventListener("click", handleFormSubmit);
     form.addEventListener("keypress", event => {

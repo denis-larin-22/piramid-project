@@ -12,41 +12,28 @@
     justify-content: space-between;
 }
 
+.mb-40 {
+    margin-bottom: 40px;
+}
+
 .advantages {
     max-width: 649px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
 
-    & a {
+    &__item {
+        line-height: 1.5rem;
+    }
+
+    & h5 {
         width: fit-content;
-        position: relative;
-        padding-bottom: 5px;
+        margin-bottom: 20px;
         @include font-setting (500, 1.25rem, 110%);
         color: $t-blue-main;
     }
 
-    & a::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: $t-blue-main;
-        transition: width 0.3s ease;
-    }
-
-    & a:hover::after {
-        width: 100%;
-    }
-
     & h4 {
         @include font-setting (600, 2.25rem, 2.81rem);
-    }
-
-    & p {
-        line-height: 1.5rem;
     }
 
     & ul {
@@ -60,19 +47,11 @@
         gap: 18px;
     }
 
-    & li p {
-        line-height: 1.25rem;
-    }
-
     & div {
         margin-top: 40px;
         display: flex;
         align-items: baseline;
         gap: 7px;
-    }
-
-    & div p {
-        font-size: 1rem;
     }
 }
 
@@ -96,6 +75,17 @@
     &__wrap {
         display: flex;
         flex-direction: column;
+    }
+
+    &_required {
+        position: relative;
+    }
+
+    &_required::after {
+        content: '*';
+        color: $t-blue-main;
+        font-size: 1.1rem;
+        margin-left: 5px;
     }
 
     & label {
